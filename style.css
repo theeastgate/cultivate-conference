@@ -41,9 +41,9 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--linen);
   color: var(--text);
-  font-family: 'Lato', system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -91,7 +91,7 @@ a { color: inherit; }
 
 .nav-brand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   font-style: italic;
   color: var(--rust);
@@ -101,9 +101,9 @@ a { color: inherit; }
 .nav-links { display: flex; gap: 1.75rem; }
 
 .nav-links a {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-mid);
   text-decoration: none;
@@ -175,9 +175,9 @@ a { color: inherit; }
 }
 
 .hero-submark {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--rust);
 }
@@ -200,9 +200,9 @@ a { color: inherit; }
 }
 
 .hero-church {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--teal);
 }
@@ -232,9 +232,9 @@ a { color: inherit; }
 /* e.g. "THE WEEKEND", "WHO YOU'LL HEAR FROM" */
 .section-label {
   display: block;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--rust);
   margin-bottom: 0.5rem;
@@ -288,7 +288,7 @@ a { color: inherit; }
 
 /* Time — bold, terracotta, right-aligned */
 .sched-time {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--rust);
   text-align: right;
@@ -307,9 +307,9 @@ a { color: inherit; }
 /* Session badge pill — only for sessions */
 .sched-session-tag {
   display: inline-block;
-  font-size: 0.56rem;
+  font-size: 0.66rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--rust-dark);
   background: rgba(184, 92, 58, 0.1);
@@ -322,7 +322,7 @@ a { color: inherit; }
 /* Title — serif, teal */
 .sched-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--teal);
   margin: 0;
@@ -331,7 +331,7 @@ a { color: inherit; }
 
 /* Subtitle — body, muted */
 .sched-sub {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-soft);
   margin: 0.15rem 0 0;
   line-height: 1.4;
@@ -413,16 +413,16 @@ a { color: inherit; }
 }
 
 .speaker-role {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--rust);
   margin-bottom: 0.5rem;
 }
 
 .speaker-bio {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-mid);
   line-height: 1.75;
   margin: 0;
@@ -434,9 +434,9 @@ a { color: inherit; }
   align-items: center;
   gap: 0.3rem;
   margin-top: 0.75rem;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--teal);
   text-decoration: none;
@@ -517,7 +517,7 @@ a { color: inherit; }
 
 .book-cover-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   font-style: italic;
   color: rgba(255,255,255,0.9);
@@ -530,7 +530,7 @@ a { color: inherit; }
 
 .book-info-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--teal);
   line-height: 1.3;
@@ -538,7 +538,7 @@ a { color: inherit; }
 }
 
 .book-info-subtitle {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   color: var(--text-soft);
   font-style: italic;
   margin: 0;
@@ -546,7 +546,7 @@ a { color: inherit; }
 }
 
 .book-info-desc {
-  font-size: 0.73rem;
+  font-size: 0.85rem;
   color: var(--text-mid);
   line-height: 1.55;
   flex: 1;
@@ -554,9 +554,9 @@ a { color: inherit; }
 }
 
 .book-order-link {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--rust);
   text-decoration: none;
@@ -664,9 +664,9 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: white;
   text-transform: uppercase;
 }
@@ -675,7 +675,7 @@ a { color: inherit; }
 
 .res-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 600;
   color: var(--teal);
   line-height: 1.25;
@@ -683,7 +683,7 @@ a { color: inherit; }
 }
 
 .res-desc {
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   color: var(--text-soft);
   margin: 0.1rem 0 0;
   line-height: 1.4;
@@ -691,9 +691,9 @@ a { color: inherit; }
 
 .res-action {
   flex-shrink: 0;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--rust);
 }
@@ -717,7 +717,7 @@ a { color: inherit; }
 
 .res-link-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--teal);
   line-height: 1.25;
@@ -725,16 +725,16 @@ a { color: inherit; }
 }
 
 .res-link-desc {
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   color: var(--text-soft);
   margin: 0.1rem 0 0;
 }
 
 .res-link-action {
   flex-shrink: 0;
-  font-size: 0.58rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--rust);
 }
@@ -766,16 +766,16 @@ a { color: inherit; }
 }
 
 .footer-tagline {
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.4);
   margin: 0;
 }
 
 .footer-copy {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: rgba(255,255,255,0.2);
   margin: 0.25rem 0 0;
 }
