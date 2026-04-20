@@ -273,7 +273,7 @@ a { color: inherit; }
 /* Each row separated by a thin line */
 .sched-row {
   display: grid;
-  grid-template-columns: 108px 1fr;
+  grid-template-columns: 90px 1fr;
   gap: 0 1.5rem;
   align-items: start;
   padding: 1.2rem 0;
@@ -283,7 +283,7 @@ a { color: inherit; }
 .sched-row:first-child { border-top: 1px solid var(--divider); }
 
 @media (max-width: 380px) {
-  .sched-row { grid-template-columns: 82px 1fr; gap: 0 0.85rem; }
+  .sched-row { grid-template-columns: 68px 1fr; gap: 0 0.75rem; }
 }
 
 /* Time — bold, terracotta, right-aligned */
