@@ -12,31 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cream: '#F5EDE4',
-            'cream-light': '#FAF5F0',
-            'cream-dark': '#EDE0D4',
-            terracotta: '#C0392B',
-            'terracotta-dark': '#8B1A1A',
-            'terracotta-light': '#E8714A',
-            botanical: '#4A5E3A',
-            'botanical-light': '#7A9B6E',
-            'text-main': '#2C1810',
-            'text-mid': '#5C3D2E',
-            'text-soft': '#8B6B5A',
-            teal: '#1a6b7c',
-          }
-        }
-      }
-    }
-  </script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -61,13 +36,21 @@
   ====================================================== -->
   <header id="top" class="hero" role="banner">
     <div class="hero-content">
+
       <img
         src="/cultivate-logo.png"
         alt="Cultivate — Grace Women's Conference"
-        class="hero-logo"
+        class="hero-logo-img"
         width="600"
         height="237"
+        onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
       />
+
+      <div id="logo-fallback" class="hero-logo-fallback" style="display:none;" aria-hidden="true">
+        <span class="hero-wordmark">Cultivate</span>
+        <span class="hero-submark">Grace Women's Conference</span>
+      </div>
+
       <div class="hero-meta">
         <p class="hero-date">Saturday, April 25, 2025</p>
         <p class="hero-church">Grace Calvary Chapel</p>
@@ -78,6 +61,7 @@
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </div>
+
     </div>
   </header>
 
@@ -90,119 +74,110 @@
 
       <div class="section-header">
         <span class="section-label">Today's Program</span>
-        <h2 id="schedule-heading" class="section-title">Schedule</h2>
+        <h2 id="schedule-heading" class="section-title">Conference <em>Schedule</em></h2>
       </div>
 
       <div class="schedule-timeline" role="list">
 
-        <div class="schedule-item type-arrival" role="listitem">
-          <time class="schedule-time" datetime="08:30">8:30<br/>9:00 AM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Arrival</span>
-            <p class="schedule-title">Sign-In &amp; Welcome</p>
-            <p class="schedule-subtitle">Coffee · Mini Muffins · Juice</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="08:30">8:30–<br>9:00 AM</time>
+          <div class="sched-body">
+            <p class="sched-title">Sign-In &amp; Welcome</p>
+            <p class="sched-sub">Coffee · Mini Muffins · Juice</p>
           </div>
         </div>
 
-        <div class="schedule-item type-worship" role="listitem">
-          <time class="schedule-time" datetime="09:00">9:00<br/>9:20 AM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Worship</span>
-            <p class="schedule-title">Opening Worship</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="09:00">9:00–<br>9:20 AM</time>
+          <div class="sched-body">
+            <p class="sched-title">Opening Worship</p>
           </div>
         </div>
 
-        <div class="schedule-item type-welcome" role="listitem">
-          <time class="schedule-time" datetime="09:20">9:20<br/>9:30 AM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Welcome</span>
-            <p class="schedule-title">Welcome &amp; Introduction</p>
-            <p class="schedule-subtitle">Ashley · 5–10 minutes</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="09:20">9:20–<br>9:30 AM</time>
+          <div class="sched-body">
+            <p class="sched-title">Welcome &amp; Introduction</p>
+            <p class="sched-sub">Ashley · 5–10 minutes</p>
           </div>
         </div>
 
-        <div class="schedule-item type-session" role="listitem">
-          <time class="schedule-time" datetime="09:30">9:30<br/>10:15 AM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Session 1</span>
-            <p class="schedule-title">Deeply Rooted</p>
-            <p class="schedule-subtitle">Sarah Enterline · 45 minutes</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="09:30">9:30–<br>10:15 AM</time>
+          <div class="sched-body">
+            <span class="sched-session-tag">Session 1</span>
+            <p class="sched-title">Deeply Rooted</p>
+            <p class="sched-sub">Sarah Enterline · 45 minutes</p>
           </div>
         </div>
 
-        <div class="schedule-item type-break" role="listitem">
-          <time class="schedule-time" datetime="10:15">10:15<br/>10:30 AM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Break</span>
-            <p class="schedule-title">15-Minute Break</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="10:15">10:15–<br>10:30 AM</time>
+          <div class="sched-body">
+            <p class="sched-title">15-Minute Break</p>
           </div>
         </div>
 
-        <div class="schedule-item type-session" role="listitem">
-          <time class="schedule-time" datetime="10:30">10:30<br/>11:30 AM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Session 2</span>
-            <p class="schedule-title">Pruned and Pressed</p>
-            <p class="schedule-subtitle">Worship Song + Sarah Enterline · 60 minutes</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="10:30">10:30–<br>11:30 AM</time>
+          <div class="sched-body">
+            <span class="sched-session-tag">Session 2</span>
+            <p class="sched-title">Pruned and Pressed</p>
+            <p class="sched-sub">Worship Song + Sarah Enterline · 60 minutes</p>
           </div>
         </div>
 
-        <div class="schedule-item type-meal" role="listitem">
-          <time class="schedule-time" datetime="11:30">11:30 AM<br/>12:30 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Lunch</span>
-            <p class="schedule-title">Lunch Break</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="11:30">11:30 AM–<br>12:30 PM</time>
+          <div class="sched-body">
+            <p class="sched-title">Lunch Break</p>
           </div>
         </div>
 
-        <div class="schedule-item type-worship" role="listitem">
-          <time class="schedule-time" datetime="12:30">12:30<br/>12:50 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Worship</span>
-            <p class="schedule-title">Afternoon Worship</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="12:30">12:30–<br>12:50 PM</time>
+          <div class="sched-body">
+            <p class="sched-title">Afternoon Worship</p>
           </div>
         </div>
 
-        <div class="schedule-item type-session" role="listitem">
-          <time class="schedule-time" datetime="12:50">12:50<br/>1:30 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Session 3</span>
-            <p class="schedule-title">Becoming the Sower</p>
-            <p class="schedule-subtitle">Sarah Enterline · 40 minutes</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="12:50">12:50–<br>1:30 PM</time>
+          <div class="sched-body">
+            <span class="sched-session-tag">Session 3</span>
+            <p class="sched-title">Becoming the Sower</p>
+            <p class="sched-sub">Sarah Enterline · 40 minutes</p>
           </div>
         </div>
 
-        <div class="schedule-item type-activity" role="listitem">
-          <time class="schedule-time" datetime="13:30">1:30<br/>2:15 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Craft</span>
-            <p class="schedule-title">Craft Time</p>
-            <p class="schedule-subtitle">45 minutes</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="13:30">1:30–<br>2:15 PM</time>
+          <div class="sched-body">
+            <p class="sched-title">Craft Time</p>
+            <p class="sched-sub">45 minutes</p>
           </div>
         </div>
 
-        <div class="schedule-item type-activity" role="listitem">
-          <time class="schedule-time" datetime="14:15">2:15<br/>2:45 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Dessert</span>
-            <p class="schedule-title">Dessert Bar</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="14:15">2:15–<br>2:45 PM</time>
+          <div class="sched-body">
+            <p class="sched-title">Dessert Bar</p>
           </div>
         </div>
 
-        <div class="schedule-item type-session" role="listitem">
-          <time class="schedule-time" datetime="14:45">2:45<br/>3:45 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Session 4</span>
-            <p class="schedule-title">Pair &amp; Share · Q&amp;A · Resources</p>
-            <p class="schedule-subtitle">Ashley &amp; Sarah · 60 minutes</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="14:45">2:45–<br>3:45 PM</time>
+          <div class="sched-body">
+            <span class="sched-session-tag">Session 4</span>
+            <p class="sched-title">Pair &amp; Share · Q&amp;A · Resources</p>
+            <p class="sched-sub">Ashley &amp; Sarah · 60 minutes</p>
           </div>
         </div>
 
-        <div class="schedule-item type-worship" role="listitem">
-          <time class="schedule-time" datetime="15:45">3:45<br/>4:00 PM</time>
-          <div class="schedule-content">
-            <span class="schedule-badge">Worship</span>
-            <p class="schedule-title">Closing Worship</p>
+        <div class="sched-row" role="listitem">
+          <time class="sched-time" datetime="15:45">3:45–<br>4:00 PM</time>
+          <div class="sched-body">
+            <p class="sched-title">Closing Worship</p>
           </div>
         </div>
 
@@ -219,30 +194,29 @@
 
       <div class="section-header">
         <span class="section-label">Featured Speaker</span>
-        <h2 id="speaker-heading" class="section-title">Sarah R. Enterline</h2>
+        <h2 id="speaker-heading" class="section-title">Who You'll <em>Hear From</em></h2>
       </div>
 
-      <!-- Bio Card -->
-      <div class="speaker-card">
-        <div class="speaker-photo-wrapper" aria-hidden="true">
+      <!-- Bio -->
+      <div class="speaker-layout">
+
+        <div class="speaker-avatar">
           <img
             src="/sarah-enterline.jpg"
             alt="Sarah R. Enterline"
-            class="speaker-photo"
-            onerror="this.style.display='none'; document.getElementById('speaker-initials').style.display='flex';"
+            onerror="this.style.display='none'; document.getElementById('speaker-initial').style.display='block';"
           />
-          <div id="speaker-initials" class="speaker-photo-placeholder" style="display:none;" aria-hidden="true">SE</div>
+          <span id="speaker-initial" class="speaker-avatar-initial" style="display:none;" aria-hidden="true">SE</span>
         </div>
 
         <div class="speaker-info">
           <h3 class="speaker-name">Sarah R. Enterline</h3>
-          <p class="speaker-credential">Author · Apologist · Women's Ministry Leader</p>
+          <p class="speaker-role">Author · Apologist · Women's Ministry Leader</p>
           <p class="speaker-bio">
             Sarah is an author, apologist, pastor's wife, mother, teacher, and women's ministry leader. She holds undergraduate degrees in Biblical Studies, Christian Studies (Theology &amp; Ministry), Social and Behavioral Science, and Philosophy, along with a California State Credential in History and an M.A. in Christian Leadership. Sarah speaks at churches and conferences around the country and has guested on numerous radio shows and podcasts.
           </p>
-          <a href="https://www.sarahrenterline.com" target="_blank" rel="noopener noreferrer" class="speaker-link">
+          <a href="https://www.sarahrenterline.com" target="_blank" rel="noopener noreferrer" class="speaker-site-link">
             Visit sarahrenterline.com
-            <!-- external link icon -->
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
               <polyline points="15 3 21 3 21 9"/>
@@ -250,69 +224,64 @@
             </svg>
           </a>
         </div>
+
       </div>
 
       <!-- Books -->
-      <div class="books-section">
-        <div class="section-header" style="margin-bottom:1.5rem;">
-          <span class="section-label">Recommended Reading</span>
-          <h3 class="books-heading">Books by Sarah</h3>
-        </div>
-
-        <div class="books-grid">
-
-          <!-- Book 1 -->
-          <div class="book-card">
-            <div class="book-cover" style="background: linear-gradient(150deg, #7B2D4F 0%, #4D1530 100%);">
-              <span class="book-cover-label">No Apologies</span>
-            </div>
-            <h4 class="book-info-title">No Apologies</h4>
-            <p class="book-info-subtitle">The Life and Work of Susanna Newcome</p>
-            <p class="book-info-desc">The story of the earliest woman to publicly engage in Christian apologetics — in 1728.</p>
-            <a href="https://www.amazon.com/No-Apologies-Life-Susanna-Newcome/dp/0578678837" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order No Apologies on Amazon">Order Now →</a>
-          </div>
-
-          <!-- Book 2 -->
-          <div class="book-card">
-            <div class="book-cover" style="background: linear-gradient(150deg, #A37830 0%, #6B4E18 100%);">
-              <span class="book-cover-label">Digging Deeper</span>
-            </div>
-            <h4 class="book-info-title">Digging Deeper</h4>
-            <p class="book-info-subtitle">The Life and Work of Mary Brodrick</p>
-            <p class="book-info-desc">A female Egyptologist and devoted Christian whose work illuminates the trial and crucifixion of Jesus.</p>
-            <a href="https://www.amazon.com/Digging-Deeper-Life-Work-Brodrick/dp/B0CLQV5TFX/" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order Digging Deeper on Amazon">Order Now →</a>
-          </div>
-
-          <!-- Book 3 -->
-          <div class="book-card">
-            <div class="book-cover" style="background: linear-gradient(150deg, #1a6b7c 0%, #0d3e49 100%);">
-              <span class="book-cover-label">Stand Therefore</span>
-            </div>
-            <h4 class="book-info-title">Stand Therefore</h4>
-            <p class="book-info-subtitle">A Practical Guide to Spiritual Warfare</p>
-            <p class="book-info-desc">Drawing on 25 years of ministry to equip believers for spiritual battle — victory through Christ alone.</p>
-            <a href="https://www.amazon.com/Stand-Therefore-Practical-Spiritual-Warfare/dp/B0C49VY5TS/" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order Stand Therefore on Amazon">Order Now →</a>
-          </div>
-
-          <!-- Book 4 -->
-          <div class="book-card">
-            <div class="book-cover" style="background: linear-gradient(150deg, #C0392B 0%, #7B1A14 100%);">
-              <span class="book-cover-label">A Visual Guide to Biblical Apologetics</span>
-            </div>
-            <h4 class="book-info-title">A Visual Guide to Biblical Apologetics</h4>
-            <p class="book-info-subtitle"></p>
-            <p class="book-info-desc">Infographics, charts, and tables to help you understand and share your faith with confidence.</p>
-            <a href="https://www.amazon.com/Visual-Guide-Biblical-Apologetics-Kind/dp/0736982760/" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order A Visual Guide to Biblical Apologetics on Amazon">Order Now →</a>
-          </div>
-
-        </div>
-
-        <p class="books-all-link-wrapper">
-          <a href="https://www.sarahrenterline.com/books" target="_blank" rel="noopener noreferrer" class="books-all-link">
-            Browse all books at sarahrenterline.com →
-          </a>
-        </p>
+      <div class="books-header">
+        <span class="section-label">Recommended Reading</span>
+        <h3 class="books-heading">Books by <em>Sarah</em></h3>
       </div>
+
+      <div class="books-grid">
+
+        <div class="book-card">
+          <div class="book-cover" style="background: linear-gradient(150deg, #7B2D4F 0%, #4D1530 100%);">
+            <span class="book-cover-label">No Apologies</span>
+          </div>
+          <h4 class="book-info-title">No Apologies</h4>
+          <p class="book-info-subtitle">The Life and Work of Susanna Newcome</p>
+          <p class="book-info-desc">The story of the earliest woman to publicly engage in Christian apologetics — in 1728.</p>
+          <a href="https://www.amazon.com/No-Apologies-Life-Susanna-Newcome/dp/0578678837" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order No Apologies on Amazon">Order Now →</a>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover" style="background: linear-gradient(150deg, #A37830 0%, #6B4E18 100%);">
+            <span class="book-cover-label">Digging Deeper</span>
+          </div>
+          <h4 class="book-info-title">Digging Deeper</h4>
+          <p class="book-info-subtitle">The Life and Work of Mary Brodrick</p>
+          <p class="book-info-desc">A female Egyptologist and devoted Christian whose work illuminates the trial and crucifixion of Jesus.</p>
+          <a href="https://www.amazon.com/Digging-Deeper-Life-Work-Brodrick/dp/B0CLQV5TFX/" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order Digging Deeper on Amazon">Order Now →</a>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover" style="background: linear-gradient(150deg, #1F4D5C 0%, #0d3040 100%);">
+            <span class="book-cover-label">Stand Therefore</span>
+          </div>
+          <h4 class="book-info-title">Stand Therefore</h4>
+          <p class="book-info-subtitle">A Practical Guide to Spiritual Warfare</p>
+          <p class="book-info-desc">Drawing on 25 years of ministry to equip believers for spiritual battle — victory through Christ alone.</p>
+          <a href="https://www.amazon.com/Stand-Therefore-Practical-Spiritual-Warfare/dp/B0C49VY5TS/" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order Stand Therefore on Amazon">Order Now →</a>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover" style="background: linear-gradient(150deg, #B85C3A 0%, #7B1A14 100%);">
+            <span class="book-cover-label">A Visual Guide to Biblical Apologetics</span>
+          </div>
+          <h4 class="book-info-title">A Visual Guide to Biblical Apologetics</h4>
+          <p class="book-info-subtitle"></p>
+          <p class="book-info-desc">Infographics, charts, and tables to help you understand and share your faith with confidence.</p>
+          <a href="https://www.amazon.com/Visual-Guide-Biblical-Apologetics-Kind/dp/0736982760/" target="_blank" rel="noopener noreferrer" class="book-order-link" aria-label="Order A Visual Guide to Biblical Apologetics on Amazon">Order Now →</a>
+        </div>
+
+      </div>
+
+      <p class="books-all-link-wrapper">
+        <a href="https://www.sarahrenterline.com/books" target="_blank" rel="noopener noreferrer" class="books-all-link">
+          Browse all books at sarahrenterline.com →
+        </a>
+      </p>
 
     </div>
   </section>
@@ -326,273 +295,259 @@
 
       <div class="section-header">
         <span class="section-label">Today's Materials</span>
-        <h2 id="resources-heading" class="section-title">Conference Resources</h2>
+        <h2 id="resources-heading" class="section-title">Conference <em>Resources</em></h2>
         <p class="section-desc">Tap any resource to download or open. All materials are free.</p>
       </div>
 
-      <!-- ── Category 1: Session Notes ── -->
-      <div class="resource-category">
-        <div class="resource-category-header">
-          <div class="resource-category-icon" style="background: rgba(192,57,43,0.1);" aria-hidden="true">
-            <!-- open book icon -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <h3 class="resource-category-title">Session Notes &amp; Scripture</h3>
+      <!-- ── Full-width: Session Notes & Scripture ── -->
+      <div class="resources-full">
+
+        <div class="res-cat-header">
+          <div class="res-cat-dash"></div>
+          <h3 class="res-cat-title">Session Notes &amp; Scripture</h3>
         </div>
 
-        <div class="resource-grid">
+        <div class="res-list">
 
-          <a href="/resources/session-1-deeply-rooted.pdf" class="resource-item" download aria-label="Download Session 1: Deeply Rooted notes">
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/session-1-deeply-rooted.pdf" class="res-row" download aria-label="Download Session 1: Deeply Rooted notes">
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Session 1: Deeply Rooted — Notes</p>
             </div>
-            <span class="resource-text">Session 1: Deeply Rooted — Notes</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/session-2-pruned-and-pressed.pdf" class="resource-item" download aria-label="Download Session 2: Pruned and Pressed notes">
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/session-2-pruned-and-pressed.pdf" class="res-row" download aria-label="Download Session 2: Pruned and Pressed notes">
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Session 2: Pruned and Pressed — Notes</p>
             </div>
-            <span class="resource-text">Session 2: Pruned and Pressed — Notes</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/session-3-becoming-the-sower.pdf" class="resource-item" download aria-label="Download Session 3: Becoming the Sower notes">
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/session-3-becoming-the-sower.pdf" class="res-row" download aria-label="Download Session 3: Becoming the Sower notes">
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Session 3: Becoming the Sower — Notes</p>
             </div>
-            <span class="resource-text">Session 3: Becoming the Sower — Notes</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/session-4-qa-discussion-guide.pdf" class="resource-item" download aria-label="Download Session 4 discussion guide">
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/session-4-qa-discussion-guide.pdf" class="res-row" download aria-label="Download Session 4 discussion guide">
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Session 4: Pair &amp; Share Discussion Guide</p>
             </div>
-            <span class="resource-text">Session 4: Pair &amp; Share Discussion Guide</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/conference-key-scriptures.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/conference-key-scriptures.pdf" class="res-row" download>
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Conference Key Scriptures</p>
             </div>
-            <span class="resource-text">Conference Key Scriptures</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/sermon-notes-template.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/sermon-notes-template.pdf" class="res-row" download>
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Sermon Notes Template</p>
             </div>
-            <span class="resource-text">Sermon Notes Template</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/application-reflection-questions.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/application-reflection-questions.pdf" class="res-row" download>
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Personal Application &amp; Reflection Questions</p>
             </div>
-            <span class="resource-text">Personal Application &amp; Reflection Questions</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
-          <a href="/resources/memory-verses.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <a href="/resources/memory-verses.pdf" class="res-row" download>
+            <div class="res-badge">PDF</div>
+            <div class="res-body">
+              <p class="res-title">Today's Memory Verses</p>
             </div>
-            <span class="resource-text">Today's Memory Verses</span>
-            <span class="resource-badge badge-pdf">PDF</span>
+            <span class="res-action">GET ↓</span>
           </a>
 
         </div>
       </div>
 
-      <!-- ── Category 2: Devotional & Spiritual Growth ── -->
-      <div class="resource-category">
-        <div class="resource-category-header">
-          <div class="resource-category-icon" style="background: rgba(74,94,58,0.1);" aria-hidden="true">
-            <!-- heart icon -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
+      <!-- ── Two columns: Devotional | Community ── -->
+      <div class="resources-cols">
+
+        <!-- Column 1: Devotional & Spiritual Growth -->
+        <div>
+          <div class="res-cat-header">
+            <div class="res-cat-dash"></div>
+            <h3 class="res-cat-title">Devotional &amp; Spiritual Growth</h3>
           </div>
-          <h3 class="resource-category-title">Devotional &amp; Spiritual Growth</h3>
-        </div>
 
-        <div class="resource-grid">
+          <div class="res-list">
 
-          <a href="/resources/30-day-cultivate-devotional.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">30-Day Cultivate Devotional Plan</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/30-day-cultivate-devotional.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">30-Day Cultivate Devotional Plan</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/daily-quiet-time-guide.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Daily Quiet Time Guide</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/daily-quiet-time-guide.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Daily Quiet Time Guide</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/prayer-journal-template.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Prayer Journal Template</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/prayer-journal-template.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Prayer Journal Template</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/scripture-memorization-cards.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Scripture Memorization Cards</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/scripture-memorization-cards.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Scripture Memorization Cards</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/spiritual-disciplines-guide.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Spiritual Disciplines Starter Guide</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/spiritual-disciplines-guide.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Spiritual Disciplines Starter Guide</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/womens-bible-reading-plan.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Women's Bible Reading Plan</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/womens-bible-reading-plan.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Women's Bible Reading Plan</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/gratitude-reflection-worksheet.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Gratitude &amp; Reflection Worksheet</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/gratitude-reflection-worksheet.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Gratitude &amp; Reflection Worksheet</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/john15-vine-branches-study.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Bearing Fruit: John 15 Study Guide</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/john15-vine-branches-study.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Bearing Fruit: John 15 Study Guide</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/morning-prayer-guide.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4A5E3A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Morning Prayer Guide</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/morning-prayer-guide.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Morning Prayer Guide</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-        </div>
-      </div>
-
-      <!-- ── Category 3: Community & Next Steps ── -->
-      <div class="resource-category">
-        <div class="resource-category-header">
-          <div class="resource-category-icon" style="background: rgba(26,107,124,0.1);" aria-hidden="true">
-            <!-- users icon -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
           </div>
-          <h3 class="resource-category-title">Community &amp; Next Steps</h3>
         </div>
 
-        <div class="resource-grid">
+        <!-- Column 2: Community & Next Steps -->
+        <div>
+          <div class="res-cat-header">
+            <div class="res-cat-dash"></div>
+            <h3 class="res-cat-title">Community &amp; Next Steps</h3>
+          </div>
 
-          <a href="/resources/grace-womens-ministry-overview.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Grace Women's Ministry Overview</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+          <div class="res-list">
 
-          <a href="/resources/small-group-study-guide.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Small Group Study Guide</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/grace-womens-ministry-overview.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Grace Women's Ministry Overview</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/mentorship-program-info.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Mentorship Program Info</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/small-group-study-guide.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Small Group Study Guide</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/recommended-books-list.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Recommended Books &amp; Authors</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/mentorship-program-info.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Mentorship Program Info</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="https://www.sarahrenterline.com" target="_blank" rel="noopener noreferrer" class="resource-item">
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </div>
-            <span class="resource-text">Sarah Enterline's Website</span>
-            <span class="resource-badge badge-link">Link</span>
-          </a>
+            <a href="/resources/recommended-books-list.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Recommended Books &amp; Authors</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/womens-bible-study-schedule.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Women's Bible Study Schedule</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="https://www.sarahrenterline.com" target="_blank" rel="noopener noreferrer" class="res-link-row">
+              <div class="res-link-body">
+                <p class="res-link-title">Sarah Enterline's Website</p>
+                <p class="res-link-desc">sarahrenterline.com</p>
+              </div>
+              <span class="res-link-action">VISIT →</span>
+            </a>
 
-          <a href="/resources/volunteer-serve-at-grace.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Volunteer &amp; Serve at Grace</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/womens-bible-study-schedule.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Women's Bible Study Schedule</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/connect-card.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Connect with Grace Women's Ministry</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/volunteer-serve-at-grace.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Volunteer &amp; Serve at Grace</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
-          <a href="/resources/prayer-counseling-ministry.pdf" class="resource-item" download>
-            <div class="resource-icon" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a6b7c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <span class="resource-text">Prayer &amp; Counseling Ministry</span>
-            <span class="resource-badge badge-pdf">PDF</span>
-          </a>
+            <a href="/resources/connect-card.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Connect with Grace Women's Ministry</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
 
+            <a href="/resources/prayer-counseling-ministry.pdf" class="res-row" download>
+              <div class="res-badge">PDF</div>
+              <div class="res-body">
+                <p class="res-title">Prayer &amp; Counseling Ministry</p>
+              </div>
+              <span class="res-action">GET ↓</span>
+            </a>
+
+          </div>
         </div>
+
       </div>
-
     </div>
   </section>
 
