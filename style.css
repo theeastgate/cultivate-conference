@@ -345,6 +345,11 @@ a { color: inherit; }
   background-color: var(--linen);
 }
 
+/* Narrower content column so the block feels centered under the large heading */
+.speaker-section .section-inner {
+  max-width: 740px;
+}
+
 .speaker-layout {
   display: flex;
   flex-direction: column;
@@ -358,15 +363,16 @@ a { color: inherit; }
   .speaker-layout {
     flex-direction: row;
     text-align: left;
-    align-items: flex-start;
+    align-items: center; /* vertically center photo with bio text */
+    gap: 2.5rem;
   }
 }
 
 /* Circle avatar */
 .speaker-avatar {
   flex-shrink: 0;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 3px solid var(--white);
   box-shadow: 0 4px 20px rgba(44, 36, 32, 0.12);
@@ -379,7 +385,7 @@ a { color: inherit; }
 }
 
 @media (min-width: 600px) {
-  .speaker-avatar { width: 180px; height: 180px; }
+  .speaker-avatar { width: 210px; height: 210px; }
 }
 
 .speaker-avatar img {
@@ -426,7 +432,6 @@ a { color: inherit; }
   color: var(--text-mid);
   line-height: 1.75;
   margin: 0;
-  max-width: 52ch;
 }
 
 .speaker-site-link {
@@ -482,21 +487,24 @@ a { color: inherit; }
   text-align: center;
 }
 
-/* Book cover — CSS spine effect */
+/* Book cover — actual image with spine shadow */
 .book-cover {
   width: 100%;
   aspect-ratio: 2/3;
   border-radius: 3px 7px 7px 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0.75rem;
   position: relative;
   overflow: hidden;
   box-shadow:
     -4px 0 8px rgba(0,0,0,0.22),
     0 6px 20px rgba(44, 36, 32, 0.15);
   transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .book-card:hover .book-cover {
@@ -506,25 +514,13 @@ a { color: inherit; }
     0 12px 28px rgba(44, 36, 32, 0.2);
 }
 
-/* Spine shadow */
+/* Spine shadow overlay */
 .book-cover::before {
   content: '';
   position: absolute;
   left: 0; top: 0;
   width: 9px; height: 100%;
-  background: rgba(0,0,0,0.2);
-}
-
-.book-cover-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-style: italic;
-  color: rgba(255,255,255,0.9);
-  text-align: center;
-  line-height: 1.35;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-  position: relative;
+  background: rgba(0,0,0,0.18);
   z-index: 1;
 }
 
