@@ -359,11 +359,15 @@ a { color: inherit; }
   margin-bottom: 3.5rem;
 }
 
+@media (max-width: 599px) {
+  .speaker-info { align-items: center; }
+}
+
 @media (min-width: 600px) {
   .speaker-layout {
     flex-direction: row;
     text-align: left;
-    align-items: center; /* vertically center photo with bio text */
+    align-items: center;
     gap: 2.5rem;
   }
 }
