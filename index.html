@@ -27,7 +27,19 @@
         <a href="#schedule">Schedule</a>
         <a href="#speaker">Speaker</a>
         <a href="#resources">Resources</a>
+        <a href="#teachings">Videos</a>
       </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <line x1="2" y1="5"  x2="20" y2="5"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2" y1="11" x2="20" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="close-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -439,6 +451,61 @@
 
 
   <!-- ======================================================
+       TEACHINGS
+  ====================================================== -->
+  <section id="teachings" class="section teachings-section" aria-labelledby="teachings-heading">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <span class="section-label">Watch &amp; Revisit</span>
+        <h2 id="teachings-heading" class="section-title">Conference <em>Teachings</em></h2>
+        <p class="section-desc">All four sessions from today's conference.</p>
+      </div>
+
+      <div class="teachings-grid">
+
+        <div class="teaching-card">
+          <div class="teaching-label">Session 1</div>
+          <h3 class="teaching-title">Deeply Rooted</h3>
+          <div class="teaching-embed">
+            <!-- Replace VIDEO_ID_1 with the YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Session 1: Deeply Rooted" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="teaching-card">
+          <div class="teaching-label">Session 2</div>
+          <h3 class="teaching-title">Pruned and Pressed</h3>
+          <div class="teaching-embed">
+            <!-- Replace VIDEO_ID_2 with the YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Session 2: Pruned and Pressed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="teaching-card">
+          <div class="teaching-label">Session 3</div>
+          <h3 class="teaching-title">Becoming the Sower</h3>
+          <div class="teaching-embed">
+            <!-- Replace VIDEO_ID_3 with the YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Session 3: Becoming the Sower" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="teaching-card">
+          <div class="teaching-label">Session 4</div>
+          <h3 class="teaching-title">Pair &amp; Share / Q&amp;A</h3>
+          <div class="teaching-embed">
+            <!-- Replace VIDEO_ID_4 with the YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Session 4: Pair & Share / Q&A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
        FOOTER
   ====================================================== -->
   <footer class="footer" role="contentinfo">
@@ -454,5 +521,19 @@
     </div>
   </footer>
 
+  <script>
+    const nav = document.querySelector('.sticky-nav');
+    const hamburger = document.querySelector('.nav-hamburger');
+    hamburger.addEventListener('click', () => {
+      const open = nav.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
